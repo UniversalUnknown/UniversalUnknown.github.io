@@ -3,10 +3,12 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <link rel="icon" type="image/x-icon" href="../favicon.ico" />
+        <meta name="description" content="Personal wallpaper collection featuring cyberpunk, retro anime, and abstract wallpapers." />
         <title>Theme Page – Wallpapers</title>
         <meta
             http-equiv="Content-Security-Policy"
-            content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; frame-ancestors 'none';"
+            content="default-src 'self'; script-src 'self' 'unsafe-inline'; img-src 'self' data:; style-src 'self' 'unsafe-inline';"
         />
         <meta http-equiv="X-Frame-Options" content="DENY" />
         <meta http-equiv="X-Content-Type-Options" content="nosniff" />
@@ -245,6 +247,7 @@
                             <img
                                 src="20250117_203648.jpg"
                                 alt="Random Twitter"
+                                loading="lazy"
                             />
                         </div>
                         <div class="meta">
@@ -266,6 +269,7 @@
                             <img
                                 src="GM_VJguakAA9hFq.jpeg"
                                 alt="Random Twitter moment 2"
+                                loading="lazy"
                             />
                         </div>
                         <div class="meta">
@@ -284,7 +288,7 @@
                     <!-- card 3 -->
                     <article class="card" onclick="toggleCard(this)">
                         <div class="image">
-                            <img src="wallhaven-yxd3kk.jpeg" alt="Friend" />
+                            <img src="wallhaven-yxd3kk.jpeg" alt="Friend" loading="lazy" />
                         </div>
                         <div class="meta">
                             <div class="title">Friend</div>
@@ -305,6 +309,7 @@
                             <img
                                 src="Retro anime girl - Futurist tech glasess.jpeg"
                                 alt="Cool Image 4"
+                                loading="lazy"
                             />
                         </div>
                         <div class="meta">
@@ -326,6 +331,7 @@
                             <img
                                 src="wallhaven-1q83qg.jpeg"
                                 alt="My Fav Wallpaper"
+                                loading="lazy"
                             />
                         </div>
                         <div class="meta">
@@ -344,7 +350,7 @@
                     <!-- card 6 -->
                     <article class="card" onclick="toggleCard(this)">
                         <div class="image">
-                            <img src="wallhaven-3l5m1d.png" alt="spidy" />
+                            <img src="wallhaven-3l5m1d.png" alt="spidy" loading="lazy" />
                         </div>
                         <div class="meta">
                             <div class="title">Spidy</div>
@@ -365,6 +371,7 @@
                             <img
                                 src="wallhaven-13mk9v.jpg"
                                 alt="Wallhaven moments"
+                                loading="lazy"
                             />
                         </div>
                         <div class="meta">
@@ -386,6 +393,7 @@
                             <img
                                 src="wallhaven-218q39.jpg"
                                 alt="Wallhaven moments 2"
+                                loading="lazy"
                             />
                         </div>
                         <div class="meta">
@@ -407,6 +415,7 @@
                             <img
                                 src="wallhaven-281d5y.png"
                                 alt="Wallhaven moments 3"
+                                loading="lazy"
                             />
                         </div>
                         <div class="meta">
@@ -428,6 +437,7 @@
                             <img
                                 src="wallhaven-5we787.jpg"
                                 alt="Wallhaven moments 4"
+                                loading="lazy"
                             />
                         </div>
                         <div class="meta">
@@ -449,6 +459,7 @@
                             <img
                                 src="wallhaven-l3zmwy.jpg"
                                 alt="My fav wallpaper moment 2"
+                                loading="lazy"
                             />
                         </div>
                         <div class="meta">
@@ -470,6 +481,7 @@
                             <img
                                 src="wallhaven-o36l99.jpg"
                                 alt="Wallhaven moments"
+                                loading="lazy"
                             />
                         </div>
                         <div class="meta">
@@ -498,12 +510,22 @@
 
             function downloadImage(e, filename) {
                 e.stopPropagation();
-                const a = document.createElement("a");
-                a.href = filename;
-                a.download = filename;
-                document.body.appendChild(a);
-                a.click();
-                document.body.removeChild(a);
+                const img = document.querySelector(`.card.expanded .image img`);
+                if (!img) return;
+                const c = document.createElement("canvas");
+                c.width = img.naturalWidth;
+                c.height = img.naturalHeight;
+                c.getContext("2d").drawImage(img, 0, 0);
+                c.toBlob((blob) => {
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement("a");
+                    a.href = url;
+                    a.download = filename;
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    URL.revokeObjectURL(url);
+                });
             }
         </script>
     </body>
