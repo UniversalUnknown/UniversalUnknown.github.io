@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" type="image/x-icon" href="../Needs/favicon.ico" />
+        <link
+            rel="preload"
+            href="../Needs/JetBrainsMono-Medium.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin
+        />
+        <meta
+            name="description"
+            content="A small archive of project write-ups — everything I tinkered with, in one quiet place."
+        />
+        <title>Project Archive</title>
+        <style>
+            @font-face {
+                font-family: "JetBrains Mono";
+                src: url("../Needs/JetBrainsMono-Medium.woff2") format("woff2");
+                font-display: swap;
+            }
+            :root {
+                color-scheme: light;
+                --primary-color: #2c3e50;
+                --accent-color: #3498db;
+                --bg-color: #ffffff;
+                --card-color: rgba(255, 255, 255, 0.85);
+                --border-color: rgba(44, 62, 80, 0.1);
+                --text-color: #444;
+                --muted-color: #6b7177;
+                --card-shadow: 0 12px 28px rgba(16, 24, 40, 0.07);
+                --body-gradient: linear-gradient(
+                    90deg,
+                    rgba(255, 255, 255, 1) 0%,
+                    rgba(214, 214, 214, 1) 100%,
+                    rgba(237, 221, 83, 1) 100%
+                );
+            }
+
+            * {
+                box-sizing: border-box;
+            }
+
+            body {
+                margin: 0;
+                font-family:
+                    "JetBrains Mono", "Segoe UI", Tahoma, Geneva, Verdana,
+                    sans-serif;
+                background-color: var(--bg-color);
+                background-image: var(--body-gradient);
+                background-attachment: fixed;
+                background-size: cover;
+                color: var(--text-color);
+                line-height: 1.7;
+            }
+
+            nav {
+                position: relative;
+                padding: 24px 20px 8px;
+                text-align: center;
+            }
+
+            nav ul {
+                padding: 0;
+                margin: 0;
+                list-style: none;
+                display: inline-flex;
+                flex-wrap: wrap;
+                gap: 10px 26px;
+                align-items: center;
+            }
+
+            nav a,
+            nav button {
+                text-decoration: none;
+                color: var(--accent-color);
+                font-weight: 500;
+                font-size: 1em;
+                font-family: inherit;
+                background: none;
+                border: none;
+                cursor: pointer;
+                padding: 0;
+            }
+
+            nav a:hover {
+                text-decoration: underline;
+            }
+
+            .container {
+                max-width: 900px;
+                margin: 0 auto;
+                padding: 16px 20px 80px;
+            }
+
+            header {
+                text-align: center;
+                padding: 8px 0 36px;
+            }
+
+            header h1 {
+                margin: 0;
+                font-size: 1.9em;
+                font-weight: 500;
+                color: var(--primary-color);
+            }
+
+            header p {
+                margin: 10px 0 0;
+                color: var(--muted-color);
+                font-size: 0.95em;
+            }
+
+            .cards {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+                gap: 20px;
+            }
+
+            .card {
+                display: block;
+                background: var(--card-color);
+                border: 1px solid var(--border-color);
+                border-radius: 14px;
+                padding: 22px 20px;
+                text-decoration: none;
+                color: inherit;
+                transition:
+                    transform 0.22s ease,
+                    box-shadow 0.22s ease,
+                    border-color 0.22s ease;
+            }
+
+            .card:hover {
+                transform: translateY(-4px);
+                box-shadow: var(--card-shadow);
+                border-color: rgba(52, 152, 219, 0.35);
+            }
+
+            .card .tag {
+                font-size: 0.72em;
+                letter-spacing: 0.08em;
+                text-transform: uppercase;
+                color: var(--accent-color);
+                margin-bottom: 10px;
+            }
+
+            .card h2 {
+                margin: 0 0 8px;
+                font-size: 1.08em;
+                font-weight: 500;
+                color: var(--primary-color);
+            }
+
+            .card p {
+                margin: 0 0 16px;
+                font-size: 0.88em;
+                color: var(--muted-color);
+            }
+
+            .card .foot {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                font-size: 0.78em;
+                color: var(--muted-color);
+                border-top: 1px solid var(--border-color);
+                padding-top: 14px;
+            }
+
+            .card .foot .open {
+                color: var(--accent-color);
+            }
+
+            footer {
+                text-align: center;
+                margin-top: 56px;
+                color: var(--muted-color);
+                font-size: 0.8em;
+            }
+
+            @media (max-width: 560px) {
+                .cards {
+                    grid-template-columns: 1fr;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <nav role="navigation" aria-label="Main navigation">
+            <ul>
+                <li><a href="../index.html" title="Home">Home</a></li>
+                <li>
+                    <a href="../posts/posts.html" title="My Engineering Posts"
+                        >Posts</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="../themes/theme.html"
+                        title="My Personal Wallpapers"
+                        >Themes</a
+                    >
+                </li>
+            </ul>
+        </nav>
+
+        <main class="container" role="main">
+            <header>
+                <h1>Project Archive</h1>
+                <p>small write-ups of things i built, broke, and rebuilt</p>
+            </header>
+
+            <section class="cards" aria-label="Project blog entries">
+                <a class="card" href="mc.html">
+                    <div class="tag">ESP8266</div>
+                    <h2>My Microcontroller learning</h2>
+                    <p>
+                        I’ve worked through Espressif, Arduino, and STM — this
+                        is my journey.
+                    </p>
+                    <div class="foot">
+                        <span>2026-07-29</span>
+                        <span class="open">read &#8594;</span>
+                    </div>
+                </a>
+
+                <a class="card" href="repairs.html">
+                    <div class="tag">Soldering, error detection</div>
+                    <h2>Repairs and Projects</h2>
+                    <p>Repairs i had gone through and few rant about my pending projects, nothing serious though (:sob).</p>
+                    <div class="foot">
+                        <span>2026-05-12</span>
+                        <span class="open">read &#8594;</span>
+                    </div>
+                </a>
+
+                <a class="card" href="archives.html">
+                    <div class="tag">NEWS</div>
+                    <h2>Archived news</h2>
+                    <p>
+                        Tech news stories that are easily forgotten over time are collected and preserved in this list.
+                    </p>
+                    <div class="foot">
+                        <span>2026-05-12</span>
+                        <span class="open">read &#8594;</span>
+                    </div>
+                </a>
+            </section>
+
+
+            <footer>built with html and a lots of patience</footer>
+        </main>
+    </body>
+</html>

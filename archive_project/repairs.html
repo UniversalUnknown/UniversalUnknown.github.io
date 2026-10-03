@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" type="image/x-icon" href="../Needs/favicon.ico" />
+        <link
+            rel="preload"
+            href="../Needs/JetBrainsMono-Medium.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin
+        />
+        <meta
+            name="description"
+            content="Small-signal analysis notes for BJT and MOSFET circuits."
+        />
+        <title>Small-Signal Notes · Project Archive</title>
+        <style>
+            @font-face {
+                font-family: "JetBrains Mono";
+                src: url("../Needs/JetBrainsMono-Medium.woff2") format("woff2");
+                font-display: swap;
+            }
+            :root {
+                color-scheme: light;
+                --primary-color: #2c3e50;
+                --accent-color: #3498db;
+                --bg-color: #ffffff;
+                --border-color: rgba(44, 62, 80, 0.1);
+                --text-color: #444;
+                --muted-color: #6b7177;
+                --body-gradient: linear-gradient(
+                    90deg,
+                    rgba(255, 255, 255, 1) 0%,
+                    rgba(214, 214, 214, 1) 100%,
+                    rgba(237, 221, 83, 1) 100%
+                );
+            }
+
+            * {
+                box-sizing: border-box;
+            }
+
+            body {
+                margin: 0;
+                font-family:
+                    "JetBrains Mono", "Segoe UI", Tahoma, Geneva, Verdana,
+                    sans-serif;
+                background-color: var(--bg-color);
+                background-image: var(--body-gradient);
+                background-attachment: fixed;
+                background-size: cover;
+                color: var(--text-color);
+                line-height: 1.7;
+            }
+
+            nav {
+                position: relative;
+                padding: 24px 20px 8px;
+                text-align: center;
+            }
+
+            nav ul {
+                padding: 0;
+                margin: 0;
+                list-style: none;
+                display: inline-flex;
+                flex-wrap: wrap;
+                gap: 10px 26px;
+                align-items: center;
+            }
+
+            nav a,
+            nav button {
+                text-decoration: none;
+                color: var(--accent-color);
+                font-weight: 500;
+                font-size: 1em;
+                font-family: inherit;
+                background: none;
+                border: none;
+                cursor: pointer;
+                padding: 0;
+            }
+
+            nav a:hover {
+                text-decoration: underline;
+            }
+
+            .container {
+                max-width: 720px;
+                margin: 0 auto;
+                padding: 16px 20px 80px;
+            }
+
+            .back {
+                display: inline-block;
+                margin-bottom: 28px;
+                color: var(--accent-color);
+                text-decoration: none;
+                font-size: 0.85em;
+            }
+
+            .back:hover {
+                text-decoration: underline;
+            }
+
+            header h1 {
+                margin: 0;
+                font-size: 1.6em;
+                font-weight: 500;
+                color: var(--primary-color);
+            }
+
+            header .meta {
+                margin-top: 8px;
+                font-size: 0.82em;
+                color: var(--muted-color);
+            }
+
+            .body {
+                margin-top: 28px;
+            }
+
+            .body h2 {
+                font-size: 1.15em;
+                font-weight: 500;
+                color: var(--primary-color);
+                margin: 32px 0 8px;
+            }
+
+            .body p {
+                margin: 0 0 16px;
+            }
+
+            .muted {
+                color: var(--muted-color);
+                font-size: 0.85em;
+            }
+        </style>
+    </head>
+    <body>
+        <nav role="navigation" aria-label="Main navigation">
+            <ul>
+                <li><a href="../index.html" title="Home">Home</a></li>
+                <li>
+                    <a href="index.html" title="Back to archive">Archive</a>
+                </li>
+                <li>
+                    <a href="../posts/posts.html" title="My Engineering Posts"
+                        >Posts</a
+                    >
+                </li>
+            </ul>
+        </nav>
+
+        <main class="container" role="main">
+            <a class="back" href="index.html">&#8592; back to archive</a>
+
+            <header>
+                <h1>Rough Repairs i gone through</h1>
+                <div class="meta">
+                    Repairs &middot; 2026-05-12 &middot; ~4 min read
+                </div>
+            </header>
+
+            <p class="muted">
+                Disclaimer: This is just about how worst i go through learning practical knowledge specifically in ee domain.
+            </p>
+
+            <article class="body">
+                <p>
+                <h1>Amount of Errors and bad stuffs i gone through</h1>
+                </p>
+                <h2>Repair?</h2>
+                <p>
+                    Since i am a <strong>ee student</strong> my parents think i could repair practically anything and i took pride in it. <br>
+                        But what i break is more amusing then what i repair; i broke a laptop, few 24V adaptor, some speakers, so many motors(both small and big one) and the list goes on.<br>
+                            One might wonder why one cares about it but few of these broken stuffs are what i ment to repair.
+                </p>
+
+                <h2>And Projects??</h2>
+                <p>
+                    I do projects that ended up unfinished or thrown into yet-to-do stuffs, one such is <strong>flyback converter</strong> (30V to 150V) which is left unfinished due to required SWG Cu wires are unavailable (yah, I have to do transformer winding by hand which is kinda intresting though btw)<br>
+                    Another-one is a mic and/or speaker to test <strong>FFT</strong> and <strong>DCT</strong> for removing background noise but as big as this project, so do cost and confussions
+                </p>
+
+                <h2>Showcase of my dirty works</h2>
+                <p>
+                    Soldering stuffs: <br>
+                    <img src="../Needs/5.webp" width="180" height="200">
+                    <img src="../Needs/1.webp" width="180" height="200"> <br>
+                    Fly-back inverter: <br>
+                    <img src="../Needs/6.webp" width="210" height="200">
+                    <img src="../Needs/7.webp" width="210" height="200">
+                </p>
+
+                <h2>Any Repairs?</h2>
+                <p>
+                <br>
+                    Since i learn worst way possible (including busting many breakers, thanks to MCB) i do learn lots of stuffs and repaired or atleast find the problem
+                    Few such include finding a short in a old laptop, <br> Repaired water heater, Bluetooth 5 speaker and most of the electrical appliances. <br>
+                    To be fair, those are unnotable and never need to be talked about but the key point is <br>
+                    You cannot ask "Fan Capacitor" or "Switch for heater", it maybe enough to understand but it unethical cause no one want to call a product by its function unless its a name. Here <strong>"condenser"</strong> and <strong>"thermostat valve"</strong> is the key word. <br>
+                    This May look like memorizing stuffs like classes but its just the way it is, Also heres a photo taken while repairing:
+                    <br>
+                    </br>
+                    <img src="../Needs/4.webp" width="240" height="200">
+                    <br>
+                    <br>
+                        Also by anychance you are buying a soldering machine like this: </br>
+                    <br>
+                    <img src="../Needs/3.webp" width="210" height="200"> <img src="../Needs/8.webp" width="210" height="200">
+                    <br>
+                    </br>
+                        Get a <strong>"soldering iron tip kit"</strong> or something likely cause 1 tip is not enough for all, also buy a mesh tip cleaner cause soldering tips always be nasty(I learned this recently in hard way btw).
+                </p>
+                <p class="muted">
+                    Thanks for reading.
+                </p>
+            </article>
+        </main>
+    </body>
+</html>

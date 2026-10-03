@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" type="image/x-icon" href="../Needs/favicon.ico" />
+        <link
+            rel="preload"
+            href="../Needs/JetBrainsMono-Medium.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin
+        />
+        <meta
+            name="description"
+            content="Small-signal analysis notes for BJT and MOSFET circuits."
+        />
+        <title>Small-Signal Notes · Project Archive</title>
+        <style>
+            @font-face {
+                font-family: "JetBrains Mono";
+                src: url("../Needs/JetBrainsMono-Medium.woff2") format("woff2");
+                font-display: swap;
+            }
+            :root {
+                color-scheme: light;
+                --primary-color: #2c3e50;
+                --accent-color: #3498db;
+                --bg-color: #ffffff;
+                --border-color: rgba(44, 62, 80, 0.1);
+                --text-color: #444;
+                --muted-color: #6b7177;
+                --body-gradient: linear-gradient(
+                    90deg,
+                    rgba(255, 255, 255, 1) 0%,
+                    rgba(214, 214, 214, 1) 100%,
+                    rgba(237, 221, 83, 1) 100%
+                );
+            }
+
+            * {
+                box-sizing: border-box;
+            }
+
+            body {
+                margin: 0;
+                font-family:
+                    "JetBrains Mono", "Segoe UI", Tahoma, Geneva, Verdana,
+                    sans-serif;
+                background-color: var(--bg-color);
+                background-image: var(--body-gradient);
+                background-attachment: fixed;
+                background-size: cover;
+                color: var(--text-color);
+                line-height: 1.7;
+            }
+
+            nav {
+                position: relative;
+                padding: 24px 20px 8px;
+                text-align: center;
+            }
+
+            nav ul {
+                padding: 0;
+                margin: 0;
+                list-style: none;
+                display: inline-flex;
+                flex-wrap: wrap;
+                gap: 10px 26px;
+                align-items: center;
+            }
+
+            nav a,
+            nav button {
+                text-decoration: none;
+                color: var(--accent-color);
+                font-weight: 500;
+                font-size: 1em;
+                font-family: inherit;
+                background: none;
+                border: none;
+                cursor: pointer;
+                padding: 0;
+            }
+
+            nav a:hover {
+                text-decoration: underline;
+            }
+
+            .container {
+                max-width: 720px;
+                margin: 0 auto;
+                padding: 16px 20px 80px;
+            }
+
+            .back {
+                display: inline-block;
+                margin-bottom: 28px;
+                color: var(--accent-color);
+                text-decoration: none;
+                font-size: 0.85em;
+            }
+
+            .back:hover {
+                text-decoration: underline;
+            }
+
+            header h1 {
+                margin: 0;
+                font-size: 1.6em;
+                font-weight: 500;
+                color: var(--primary-color);
+            }
+
+            header .meta {
+                margin-top: 8px;
+                font-size: 0.82em;
+                color: var(--muted-color);
+            }
+
+            .body {
+                margin-top: 28px;
+            }
+
+            .body h2 {
+                font-size: 1.15em;
+                font-weight: 500;
+                color: var(--primary-color);
+                margin: 32px 0 8px;
+            }
+
+            .body p {
+                margin: 0 0 16px;
+            }
+
+            .muted {
+                color: var(--muted-color);
+                font-size: 0.85em;
+            }
+        </style>
+    </head>
+    <body>
+        <nav role="navigation" aria-label="Main navigation">
+            <ul>
+                <li><a href="../index.html" title="Home">Home</a></li>
+                <li>
+                    <a href="index.html" title="Back to archive">Archive</a>
+                </li>
+                <li>
+                    <a href="../posts/posts.html" title="My Engineering Posts"
+                        >Posts</a
+                    >
+                </li>
+            </ul>
+        </nav>
+
+        <main class="container" role="main">
+            <a class="back" href="index.html">&#8592; back to archive</a>
+
+            <header>
+                <h1>Archived Tech news</h1>
+                <div class="meta">
+                    Archives &middot; 2026-09-24 &middot; ~4 min read
+                </div>
+            </header>
+
+            <article class="body">
+                <br>
+                <h1>Technical News archive</h1>
+                <p style="text-align: right;"> that are required to be archived for future.</p> </br>
+                <table border="1" cellpadding="8" cellspacing="0" style="width: 100%; border-collapse: collapse;">
+                    <thead>
+                        <tr>
+                            <th style="text-align: left;">Date(yyyy/mm/dd)</th>
+                            <th style="text-align: left;">Title</th>
+                            <th style="text-align: left;">Info</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2026-06-12</td>
+                            <td><a href="https://archlinux.org/news/active-aur-malicious-packages-incident/" target="_blank">AUR malicious</a></td>
+                            <td>Arch linux's native package manager "pacman" found to have malicious packages as usual</td>
+                        </tr>
+                        <tr>
+                            <td>2026-05-11</td>
+                            <td><a href="https://www.networkworld.com/article/4168878/aws-hit-by-us-east-1-outage-after-data-center-thermal-event.html" target="_blank">AWS US-East-1 outage</a></td>
+                            <td>Aws US-East-1 zone got attacked by drone</td>
+                        </tr>
+                        <tr>
+                            <td>2025-07-dd</td>
+                            <td><a href="https://itsfoss.com/news/arch-linux-chaos-rat/" target="_blank">Arch linux AUR attack</a></td>
+                            <td>Attacker under name danikpapas pushed RAT(Chaos RAT) as firewall update</td>
+                        </tr>
+                        <tr>
+                            <td>2024-07-19</td>
+                            <td><a href="https://support.microsoft.com/en-us/servicing/os/windows/2024/07/kb5042421-crowdstrike-issue-impacting-windows-endpoints-causing-an-0x50-or-0x7e-error-message-on-a-b" target="_blank">Windows blue screen of death</a></td>
+                            <td>Crowdstrike pushed a kernal level update that caused bluescreen of death in every windows</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                </p>
+
+                </p>
+
+                <p class="muted">
+                    Thanks for reading.
+                </p>
+            </article>
+        </main>
+    </body>
+</html>

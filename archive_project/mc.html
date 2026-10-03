@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" type="image/x-icon" href="../Needs/favicon.ico" />
+        <link
+            rel="preload"
+            href="../Needs/JetBrainsMono-Medium.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin
+        />
+        <meta
+            name="description"
+            content="BCD to Excess-3 converter in VHDL — notes from the GHDL + GTKWave journey."
+        />
+        <title>BCD to Excess-3 · Project Archive</title>
+        <style>
+            @font-face {
+                font-family: "JetBrains Mono";
+                src: url("../Needs/JetBrainsMono-Medium.woff2") format("woff2");
+                font-display: swap;
+            }
+            :root {
+                color-scheme: light;
+                --primary-color: #2c3e50;
+                --accent-color: #3498db;
+                --bg-color: #ffffff;
+                --border-color: rgba(44, 62, 80, 0.1);
+                --text-color: #444;
+                --muted-color: #6b7177;
+                --code-bg: rgba(255, 255, 255, 0.85);
+                --body-gradient: linear-gradient(
+                    90deg,
+                    rgba(255, 255, 255, 1) 0%,
+                    rgba(214, 214, 214, 1) 100%,
+                    rgba(237, 221, 83, 1) 100%
+                );
+            }
+
+            * {
+                box-sizing: border-box;
+            }
+
+            body {
+                margin: 0;
+                font-family:
+                    "JetBrains Mono", "Segoe UI", Tahoma, Geneva, Verdana,
+                    sans-serif;
+                background-color: var(--bg-color);
+                background-image: var(--body-gradient);
+                background-attachment: fixed;
+                background-size: cover;
+                color: var(--text-color);
+                line-height: 1.7;
+            }
+
+            nav {
+                position: relative;
+                padding: 24px 20px 8px;
+                text-align: center;
+            }
+
+            nav ul {
+                padding: 0;
+                margin: 0;
+                list-style: none;
+                display: inline-flex;
+                flex-wrap: wrap;
+                gap: 10px 26px;
+                align-items: center;
+            }
+
+            nav a,
+            nav button {
+                text-decoration: none;
+                color: var(--accent-color);
+                font-weight: 500;
+                font-size: 1em;
+                font-family: inherit;
+                background: none;
+                border: none;
+                cursor: pointer;
+                padding: 0;
+            }
+
+            nav a:hover {
+                text-decoration: underline;
+            }
+
+            .container {
+                max-width: 720px;
+                margin: 0 auto;
+                padding: 16px 20px 80px;
+            }
+
+            .back {
+                display: inline-block;
+                margin-bottom: 28px;
+                color: var(--accent-color);
+                text-decoration: none;
+                font-size: 0.85em;
+            }
+
+            .back:hover {
+                text-decoration: underline;
+            }
+
+            header h1 {
+                margin: 0;
+                font-size: 1.6em;
+                font-weight: 500;
+                color: var(--primary-color);
+            }
+
+            header .meta {
+                margin-top: 8px;
+                font-size: 0.82em;
+                color: var(--muted-color);
+            }
+
+            .body {
+                margin-top: 28px;
+            }
+
+            .body h2 {
+                font-size: 1.15em;
+                font-weight: 500;
+                color: var(--primary-color);
+                margin: 32px 0 8px;
+            }
+
+            .body p {
+                margin: 0 0 16px;
+            }
+
+            code {
+                display: block;
+                background: var(--code-bg);
+                border: 1px solid var(--border-color);
+                border-radius: 8px;
+                padding: 12px 14px;
+                font-size: 0.85em;
+                white-space: pre-wrap;
+                color: var(--primary-color);
+                margin-bottom: 16px;
+            }
+
+            .muted {
+                color: var(--muted-color);
+                font-size: 0.85em;
+            }
+        </style>
+    </head>
+    <body>
+        <nav role="navigation" aria-label="Main navigation">
+            <ul>
+                <li><a href="../index.html" title="Home">Home</a></li>
+                <li>
+                    <a href="index.html" title="Back to archive">Archive</a>
+                </li>
+                <li>
+                    <a href="../posts/posts.html" title="My Engineering Posts"
+                        >Posts</a
+                    >
+                </li>
+            </ul>
+        </nav>
+
+        <main class="container" role="main">
+            <a class="back" href="index.html">&#8592; back to archive</a>
+
+            <header>
+                <h1>My Learning journey</h1>
+                <div class="meta">
+                    Journal &middot; 2026-07-29 &middot; ~5 min read
+                </div>
+            </header>
+
+            <article class="body">
+                <p>
+                    This is a short entry of how i got into microcontrollers and
+                    how many did i learned throught out my college.
+                </p>
+
+                <h2>My First view</h2>
+                <p>
+                    This is a short account of how I became interested in microcontrollers
+                    and the different ones I learned to use throughout college.
+                </p>
+
+                <h2>My First Experience</h2>
+                <p>
+                    I was not introduced to microcontrollers until my first year of college.
+                    I had seen an Arduino once during school, but it seemed almost like
+                    something from another world. No one around me had even seen a breadboard
+                    before, so I never had the opportunity to understand how it worked.
+                    <br />
+                    <br />
+
+                    We were never exposed to microcontrollers in school, so the entire subject
+                    felt mysterious to me. My school life could be summarized as:
+                    “Memorize as much as possible. There is no need to understand the meaning
+                    or value of what you learn—just remember it.” Knowing a lot was often seen
+                    as the best way to appear special or different in a world where everything
+                    seemed ordinary.
+                </p>
+
+                <h2>My Second Semester and the ESP8266</h2>
+                <p>
+                    During my first semester of college, I was running a local media server on
+                    my laptop using Sonarr. I wanted to move it to lower-powered hardware so
+                    that I would not have to keep my laptop running all the time. That was when
+                    I came across a Reddit post about running similar services on an ESP8266,
+                    and I decided to give it a try.
+                    <br />
+                    <br />
+
+                    Around my second semester, close to my CAT 2 exams, I bought an ESP8266,
+                    along with an OLED display and an accelerometer. At first, I wanted to
+                    build a controller for a platform game I used to play. However, learning
+                    the Arduino programming environment was exhausting, and I struggled to
+                    find enough free time between projects, reports, records, and studying.
+                    <br />
+                    <br />
+
+                    It was not until my second year, during a holiday, that I finally had
+                    enough time to learn more about GitHub, explore the ESP8266 properly, and
+                    begin experimenting with it.
+                </p>
+
+                <h2>Other Things That Shaped My Interest</h2>
+                <p>
+                    My family bought our first smartphone when I was eleven. From that day
+                    onward, I enjoyed exploring its settings, experimenting with different
+                    options, and learning how everything worked. Although I was introduced to
+                    the internet relatively late, I learned a great deal about cybersecurity
+                    and privacy through my old laptop.
+                    <br />
+                    <br />
+
+                    My first laptop was a government-issued computer that came with BOSS OS
+                    and Windows in a dual-boot setup. It was constantly affected by viruses
+                    that could even corrupt any pendrive connected to it. The battery was
+                    damaged from the beginning, so I had to learn as much as I could to repair
+                    and maintain it.
+                    <br />
+                    <br />
+
+                    I have always enjoyed learning something new with the internet as my
+                    reference. In the end, every microcontroller I worked with felt simple
+                    once I had its datasheet in front of me. That curiosity and willingness to
+                    experiment are what kept me interested in learning more.
+                </p>
+
+
+                <h2>Finally</h2>
+                <p>Stuffs i want to try:</p>
+
+                <p class="muted">
+                    My next microcontroller i want to try is stm with few
+                    projects left in my esp82 <br />
+                    i) Running doom or badapple with ssd1306 <br />
+                    ii) Making a controller with accelerometer <br />
+                    and lot more. <br />
+                    <br />
+                    Thanks for reading :smile
+                </p>
+            </article>
+        </main>
+    </body>
+</html>
