@@ -25,18 +25,36 @@
             :root {
                 color-scheme: light;
                 --primary-color: #2c3e50;
-                --accent-color: #3498db;
-                --bg-color: #ffffff;
+                --accent-color: #2980b9;
+                --bg-color: #f8fafc;
                 --card-color: rgba(255, 255, 255, 0.85);
                 --border-color: rgba(44, 62, 80, 0.1);
-                --text-color: #444;
-                --muted-color: #6b7177;
+                --text-color: #1e293b;
+                --muted-color: #64748b;
                 --card-shadow: 0 12px 28px rgba(16, 24, 40, 0.07);
                 --body-gradient: linear-gradient(
                     90deg,
                     rgba(255, 255, 255, 1) 0%,
                     rgba(214, 214, 214, 1) 100%,
                     rgba(237, 221, 83, 1) 100%
+                );
+            }
+
+            html[data-theme="dark"] {
+                color-scheme: dark;
+                --primary-color: #f1f5f9;
+                --accent-color: #6cb2e8;
+                --bg-color: #0f0f12;
+                --card-color: rgba(22, 24, 31, 0.85);
+                --border-color: rgba(255, 255, 255, 0.08);
+                --text-color: #e2e8f0;
+                --muted-color: #94a3b8;
+                --card-shadow: 0 12px 32px rgba(0, 0, 0, 0.6);
+                --body-gradient: linear-gradient(
+                    135deg,
+                    rgba(15, 15, 18, 1) 0%,
+                    rgba(28, 28, 35, 1) 70%,
+                    rgba(60, 55, 30, 1) 100%
                 );
             }
 
@@ -187,6 +205,7 @@
                     grid-template-columns: 1fr;
                 }
             }
+
         </style>
     </head>
     <body>
@@ -205,8 +224,13 @@
                         >Themes</a
                     >
                 </li>
+                <li>
+                    <a href="javascript:void(0);" id="themeToggle" title="Toggle light/dark" style="display: inline-flex; align-items: center;">
+                        <img id="themeBtnImg" src="../Needs/sun_moon.gif" alt="Theme toggle" style="width: 40px; height: 40px; max-width: 40px; display: block;">
+                    </a>
+                </li>
             </ul>
-        </nav>
+                </nav>
 
         <main class="container" role="main">
             <header>
@@ -250,9 +274,51 @@
                     </div>
                 </a>
             </section>
+            <wbr>
 
+            <a class="card" href="myself.html">
+                <div class="tag">Just another me</div>
+                <h2>Stuffs about Myself</h2>
+                <p>
+                    ... just about me cause the frontpage is not enough unfortunately.
+                </p>
+                <div class="foot">
+                    <span>2026-09-11</span>
+                    <span class="open">read &#8594;</span>
+                </div>
+            </a>
+        </section>
 
             <footer>built with html and a lots of patience</footer>
         </main>
+                    <script>
+            (function(){
+                const root = document.documentElement;
+                const btn = document.getElementById('themeToggle');
+                const img = document.getElementById('themeBtnImg');
+                const saved = localStorage.getItem('theme');
+                const initial = saved || 'light';
+                function apply(theme){
+                    root.dataset.theme = theme;
+                    try { localStorage.setItem('theme', theme); } catch(e){}
+                    if(img){
+                        const t = Date.now();
+                        if(theme === 'dark'){
+                            img.src = '../Needs/sun_moon.gif?' + t;
+                        } else {
+                            img.src = '../Needs/moon_sun.gif?' + t;
+                        }
+                    }
+                }
+                apply(initial);
+                if(btn){
+                    btn.addEventListener('click', function(e){
+                        e.preventDefault();
+                        const next = root.dataset.theme === 'dark' ? 'light' : 'dark';
+                        apply(next);
+                    });
+                }
+            })();
+        </script>
     </body>
 </html>
