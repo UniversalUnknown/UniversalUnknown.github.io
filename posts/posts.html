@@ -376,9 +376,13 @@
                                 <span style="font-size: 16px;"><code style="display:block; white-space:pre-wrap">$ ghdl -a main_file*.vhdl</code></span>
                                 <span style="font-size: 16px;"><code style="display:block; white-space:pre-wrap">$ ghdl -a test_file*.vhdl</code></span>
                                 <span style="font-size: 16px;"><code style="display:block; white-space:pre-wrap">$ ghdl -r main_file*</code></span>
-                                <span style="font-size: 16px;"><code style="display:block; white-space:pre-wrap">$ ghdl -r test_file*<br />testfor2.vhdl:51:6:@4ns:(assertion error): End of Test
+                                <span style="font-size: 16px;"><code style="display:block; white-space:pre-wrap">$ ghdl -r test_file*<br />
+</wbr>
+testfor2.vhdl:51:6:@4ns:(assertion error): End of Test
                                 </code></span>
-                                <span style="font-size: 16px;"><code style="display:block; white-space:pre-wrap">$ ghdl -r test_file* --vcd=B2E3.vcd <br /> testfor2.vhdl:51:6:@4ns:(assertion error): End of Test</code></span>
+                                <span style="font-size: 16px;"><code style="display:block; white-space:pre-wrap">$ ghdl -r test_file* --vcd=B2E3.vcd <br /> 
+</wbr>
+testfor2.vhdl:51:6:@4ns:(assertion error): End of Test</code></span>
                                 <span style="font-size: 16px;"><code style="display:block; white-space:pre-wrap">$ gtkwave B2E3.vcd</code></span>
                             </pre>
                             The files are compiled into a folders with its file names so the way you visualize using gtkwave is by re-compiling that test folder into a *.vcd* file which can be opened with gtkview directly. <br />
